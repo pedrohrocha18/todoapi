@@ -26,12 +26,12 @@ Projeto criado com foco no aprendizado dos conceitos fundamentais de APIs REST, 
 
 ## 🔗 Endpoints da API
 
-| Método  | Endpoint      | Descrição               |
-|--------|---------------|-------------------------|
-| POST   | `/todo`       | Criar uma nova tarefa   |
-| GET    | `/todo`       | Listar todas as tarefas |
-| PUT    | `/todo/{id}`  | Atualizar uma tarefa    |
-| DELETE | `/todo/{id}`  | Deletar uma tarefa      |
+| Método | Endpoint     | Descrição               |
+| ------ | ------------ | ----------------------- |
+| POST   | `/todo`      | Criar uma nova tarefa   |
+| GET    | `/todo`      | Listar todas as tarefas |
+| PUT    | `/todo/{id}` | Atualizar uma tarefa    |
+| DELETE | `/todo/{id}` | Deletar uma tarefa      |
 
 ---
 
@@ -45,6 +45,7 @@ Projeto criado com foco no aprendizado dos conceitos fundamentais de APIs REST, 
   "completed": false
 }
 ```
+
 ---
 
 ## 📘 Documentação da API (Swagger)
@@ -53,12 +54,16 @@ Projeto criado com foco no aprendizado dos conceitos fundamentais de APIs REST, 
 
 - Após iniciar a aplicação, acesse:
 
-> http://localhost:3000/swagger-ui.html
+```
+http://localhost:3000/swagger-ui.html
+```
 
 ---
 
 ## ▶️ Como executar o projeto
+
 📋 Pré-requisitos:
+
 - Java 17 ou superior
 - Maven
 
@@ -68,21 +73,27 @@ Projeto criado com foco no aprendizado dos conceitos fundamentais de APIs REST, 
 
 - Clone o repositório:
 
-> git clone https://github.com/seu-usuario/seu-repositorio.git
+```
+ git clone https://github.com/seu-usuario/seu-repositorio.git
+```
 
 - Acesse o diretório do projeto:
 
-> cd todolist-api
-
+```
+cd todolist-api
+```
 
 - Execute a aplicação:
 
-> mvn spring-boot:run
-
+```
+ mvn spring-boot:run
+```
 
 - A API estará disponível em:
 
->http://localhost:3000/todo
+```
+http://localhost:3000/todo
+```
 
 ---
 
