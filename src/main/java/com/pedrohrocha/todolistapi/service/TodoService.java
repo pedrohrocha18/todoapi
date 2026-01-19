@@ -20,4 +20,21 @@ public class TodoService {
     public List<Task> getTasks() {
         return tasks;
     }
+
+    public Task updateTask(String id, Task updatedTask) {
+        for (Task task : tasks) {
+            if (task.getId().equals(id)) {
+                task.setTitle(updatedTask.getTitle());
+                task.setDescription(updatedTask.getDescription());
+                return task;
+            }
+        }
+        throw new RuntimeException("Não foi encontrada uma tarefa para esse ID!");
+    }
+
+    public void deleteTask(String id) {
+        boolean removed = tasks.removeIf(task -> task.getId().equals(id));
+
+        if (!removed) throw new RuntimeException("Tarefa não encontrada.");
+    }
 }
