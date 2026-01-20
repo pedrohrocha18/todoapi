@@ -26,6 +26,7 @@ public class TodoService {
             if (task.getId().equals(id)) {
                 task.setTitle(updatedTask.getTitle());
                 task.setDescription(updatedTask.getDescription());
+                task.setCompleted(updatedTask.isCompleted());
                 return task;
             }
         }

@@ -10,6 +10,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/todo")
+@CrossOrigin(
+        origins = "*",
+        methods = {RequestMethod.POST, RequestMethod.GET, RequestMethod.PUT, RequestMethod.DELETE}
+)
 public class TodoController {
     @Autowired
     private TodoService todoService;
