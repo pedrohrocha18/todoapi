@@ -74,7 +74,7 @@ http://localhost:3000/swagger-ui.html
 - Clone o repositório:
 
 ```
- git clone https://github.com/seu-usuario/seu-repositorio.git
+ git clone https://github.com/pedrohrocha18/todoapi.git
 ```
 
 - Acesse o diretório do projeto:

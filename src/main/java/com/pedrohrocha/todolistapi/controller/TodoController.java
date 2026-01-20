@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/todo")
 @CrossOrigin(
-        origins = "*",
+        origins = "https://todolistfrontspring.vercel.app/",
         methods = {RequestMethod.POST, RequestMethod.GET, RequestMethod.PUT, RequestMethod.DELETE}
 )
 public class TodoController {
