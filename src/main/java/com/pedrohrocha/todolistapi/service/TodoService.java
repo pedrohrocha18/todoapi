@@ -19,7 +19,7 @@ public class TodoService {
     }
 
     public List<Task> getTasks() {
-        if (tasks.isEmpty()) throw new TodoExceptions("Não há tarefas existentes");
+        if (tasks.isEmpty()) throw new TodoExceptions("Não há tarefas existentes!");
 
         return tasks;
     }
@@ -33,12 +33,12 @@ public class TodoService {
                 return task;
             }
         }
-        throw new TodoExceptions("Tarefa não encontrada para atualizar.");
+        throw new TodoExceptions("Tarefa não encontrada para atualizar!");
     }
 
     public void deleteTask(String id) {
         boolean removed = tasks.removeIf(task -> task.getId().equals(id));
 
-        if (!removed) throw new TodoExceptions("Tarefa não encontrada para deletar.");
+        if (!removed) throw new TodoExceptions("Tarefa não encontrada para deletar!");
     }
 }
