@@ -14,10 +14,15 @@ import java.util.List;
         origins = "https://todolistfrontspring.vercel.app/",
         methods = {RequestMethod.POST, RequestMethod.GET, RequestMethod.PUT, RequestMethod.DELETE}
 )
-public class TodoController {
-    @Autowired
-    private TodoService todoService;
 
+public class TodoController {
+    private final TodoService todoService;
+
+    public TodoController(TodoService todoService) {
+        this.todoService = todoService;
+    }
+
+    // create task
     @PostMapping
     public ResponseEntity<Task> createTask(@RequestBody Task task) {
         Task created = todoService.createTask(task);
@@ -25,16 +30,19 @@ public class TodoController {
         return ResponseEntity.status(201).body(created);
     }
 
+    // get all tasks
     @GetMapping
     public ResponseEntity<List<Task>> getAllTasks() {
         return ResponseEntity.ok(todoService.getTasks());
     }
 
+    // update task by id
     @PutMapping("/{id}")
     public ResponseEntity<Task> updateTask(@PathVariable String id, @RequestBody Task task) {
         return ResponseEntity.ok(todoService.updateTask(id, task));
     }
 
+    // delete task by id
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteTask(@PathVariable String id) {
         todoService.deleteTask(id);

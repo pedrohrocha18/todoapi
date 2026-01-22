@@ -1,5 +1,6 @@
 package com.pedrohrocha.todolistapi.service;
 
+import com.pedrohrocha.todolistapi.exceptions.TodoExceptions;
 import com.pedrohrocha.todolistapi.model.Task;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,8 @@ public class TodoService {
     }
 
     public List<Task> getTasks() {
+        if (tasks.isEmpty()) throw new TodoExceptions("Não há tarefas existentes");
+
         return tasks;
     }
 
@@ -30,12 +33,12 @@ public class TodoService {
                 return task;
             }
         }
-        throw new RuntimeException("Não foi encontrada uma tarefa para esse ID!");
+        throw new TodoExceptions("Tarefa não encontrada para atualizar.");
     }
 
     public void deleteTask(String id) {
         boolean removed = tasks.removeIf(task -> task.getId().equals(id));
 
-        if (!removed) throw new RuntimeException("Tarefa não encontrada.");
+        if (!removed) throw new TodoExceptions("Tarefa não encontrada para deletar.");
     }
 }
